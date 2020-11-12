@@ -1,0 +1,85 @@
+Questions 1:
+Create a numpy array starting from 2 till 50 with a stepsize of 3.
+
+Answer 1:
+import numpy as np
+array=np.arange(2,50,3)
+print("Array of  integers from 2 to 50")
+print(array) 
+
+Questions 2:
+Accept two lists of 5 elements each from the user.
+Convert them to numpy arrays. Concatenate these arrays and print it. Also sort these arrays and print it.
+
+Answer 2:
+import numpy as np
+x = np.array([2, 1, 4, 3, 5])
+selection_sort(x)
+
+    
+Questions 3:
+Write a code snippet to find the dimensions of a ndarray and its size.
+
+Answer 3:
+x = np.array([[1, 2, 3], [4, 5, 6]], np.int32)
+type(x)
+<class 'numpy.ndarray'>
+x.shape
+(2, 3)
+x.dtype
+dtype('int32')
+
+
+Questions 4:
+How to convert a 1D array into a 2D array? Demonstrate with the help of a code snippet
+Hint: np.newaxis, np.expand_dims
+
+Answer 4: 
+# 1D array
+In [7]: arr = np.arange(4)
+In [8]: arr.shape
+Out[8]: (4,)
+
+# make it as row vector by inserting an axis along first dimension
+In [9]: row_vec = arr[np.newaxis, :]     # arr[None, :]
+In [10]: row_vec.shape
+Out[10]: (1, 4)
+
+# make it as column vector by inserting an axis along second dimension
+In [11]: col_vec = arr[:, np.newaxis]     # arr[:, None]
+In [12]: col_vec.shape
+Out[12]: (4, 1)
+
+Questions 5:
+Consider two square numpy arrays. Stack them vertically and horizontally.
+Hint: Use vstack(), hstack()
+
+Answer 5:
+import numpy as np
+f = np.array([1,2,3])
+g = np.array([4,5,6])
+
+print('Vertical Append:', np.vstack((f, g)))
+
+Questions 6:
+How to get unique items and counts of unique items?
+
+Answer 6:
+
+# taking an input list 
+input_list = [1, 2, 2, 5, 8, 4, 4, 8] 
+
+# taking an input list 
+l1 = [] 
+
+# taking an counter 
+count = 0
+
+# travesing the array 
+for item in input_list: 
+	if item not in l1: 
+		count += 1
+		l1.append(item) 
+
+# printing the output 
+print("No of unique items are:", count) 
